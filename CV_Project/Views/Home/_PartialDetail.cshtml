@@ -1,0 +1,142 @@
+﻿
+@model CV_Project.Models.Portfolio
+
+
+<link rel='stylesheet' type='text/css' href='~/Content/bootstrap/css/bootstrap.min.css'>
+<link rel='stylesheet' type='text/css' href='~/Content/css/ionicons.min.css'>
+
+<link rel='stylesheet' type='text/css' href='~/Content/css/owl.carousel.css'>
+<link rel='stylesheet' type='text/css' href='~/Content/css/owl.theme.css'>
+<link rel='stylesheet' type='text/css' href='~/Content/css/owl.transitions.css'>
+<link rel='stylesheet' type='text/css' href='~/Content/css/magnific-popup.css'>
+<link rel='stylesheet' type='text/css' href='~/Content/css/style.css'>
+<link rel='stylesheet' type='text/css' href='~/Content/css/color-default.css'>
+
+<script src="https://kit.fontawesome.com/d739071501.js" crossorigin="anonymous"></script>
+
+<!--close button-->
+<a href="/Home/Index" class='close-btn'>
+    <span></span>
+    <span></span>
+</a>
+<!--/close button-->
+<!--preloader-->
+<div id='preloader'>
+
+    <div class='loader'>
+        <img src='img/load.gif' alt='symp'>
+    </div>
+
+</div>
+<!--/preloader-->
+
+
+<section class='single-work'>
+
+    <div class='container'>
+
+
+        <div class='row'>
+
+            <div class='col-md-8'>
+
+                <img src='~/Content/img/portfolio/@Model.ImageUrl' alt='symp'>
+
+            </div>
+
+
+            <div class='col-md-4'>
+
+                <ul class='work-info'>
+
+                    <li>
+
+                        <h4><i class='ion-ionic'></i>Client</h4>
+
+                        <p>@Model.Client</p>
+
+                    </li>
+
+                    <li>
+
+                        <h4><i class='ion-ios-calendar-outline'></i>Date</h4>
+
+                        <p>@Model.Date</p>
+
+                    </li>
+
+                    <li>
+
+                        <h4><i class='ion-ios-clock-outline'></i>Time Taken</h4>
+
+                        <p>@Model.TimeTaken</p>
+
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+
+        <div class='work-content'>
+
+            <div class='block'>
+
+                <h4>Info</h4>
+
+                <p>
+                    @Model.Description
+                </p>
+
+            </div>
+
+            <div class='block row'>
+
+
+                <div class='col-md-6'>
+
+                    <h4>The Challenge</h4>
+
+                    <p>
+                        @Model.Challenge
+                    </p>
+
+                </div>
+
+
+                <div class='col-md-6'>
+
+                    <h4>The Solution</h4>
+
+                    <p>
+                        @Model.Solution
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!--/close button-->
+</div>
+<!--=============================================================================
+    /Main Wrapper
+===============================================================================-->
+<!--=============================================================================
+    JavaScript Files
+===============================================================================-->
+<script src='~/Content/js/jquery.min.js'></script>
+<script src='~/Content/js/jquery.stellar.min.js'></script>
+<script src='~/Content/js/modernizr.js'></script>
+<script src='~/Content/js/owl.carousel.min.js'></script>
+<script src='~/Content/js/jquery.shuffle.min.js'></script>
+<script src='~/Content/js/jquery.magnific-popup.min.js'></script>
+<script src='~/Content/js/validator.min.js'></script>
+<script src='~/Content/js/smoothscroll.js'></script>
+<script src='~/Content/js/script.js'></script>

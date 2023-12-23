@@ -1,0 +1,401 @@
+﻿@using CV_Project.Models
+
+@model Info
+
+
+<section id='about' class='about-section section'>
+
+    <div class='basic-info section-block'>
+
+        <div class='container'>
+
+            <div class='section-header text-center'>
+
+                <h2>Hakkımda</h2>
+
+                <!--divider-->
+                <div class='divider-draft center'></div>
+                <!--/divider-->
+
+
+            </div>
+
+            <div class='row'>
+
+                <div class='col-md-4'>
+                    <div class='about-person-img'>
+
+                        <img src='~/Content/img/man2.png' alt='symp'>
+
+                    </div>
+
+                </div>
+
+
+                <div class='col-md-8 about-info'>
+
+
+
+
+                    <p>
+                        @Model.Coverletter
+                    </p>
+
+                    <div class='clearfix'></div>
+
+
+                    <ul class='info-list'>
+
+                        <li>
+                            <div class='inner'>
+                                <h4>Name</h4>
+                                <p>@Model.Name @Model.Surname</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class='inner'>
+                                <h4>Age</h4>
+                                <p>@Model.Age Years</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class='inner'>
+                                <h4>Email Address</h4>
+                                <p>@Model.Email</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class='inner'>
+                                <h4>Social Media</h4>
+                                <ul style="list-style-type:none;">
+                                    @if (Model.SocialMedias.Count > 5)
+                                    {
+                                        foreach (SocialMedia item in Model.SocialMedias)
+                                        {
+                                            <li style="display: inline-block; margin-right: 3%;">
+                                                <a href="@item.Link" style=" color: gray">
+                                                    <i class="fa-brands @item.Icon"></i>
+                                                </a>
+                                            </li>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        foreach (SocialMedia item in Model.SocialMedias)
+                                        {
+                                            <li style="display: inline-block; margin-right: 3%;">
+                                                <a href="@item.Link" style=" color: gray">
+                                                    <i class="fa-brands @item.Icon fa-lg"></i>
+                                                </a>
+                                            </li>
+                                        }
+                                    }
+
+                                </ul>
+                            </div>
+                        </li>
+
+
+
+                    </ul>
+
+                    <a href='#' class='symp-btn'>İletişim</a>
+
+                    <a href='#' class='symp-btn link-btn'><i class='ion-ios-download'></i>Download</a>
+
+                </div>
+
+
+
+            </div>
+
+
+
+
+        </div>
+
+
+    </div>
+
+    <div class='about-icons section-block'>
+
+        <div class='container'>
+
+            <div class='row'>
+
+                <div class='col-md-3'>
+                    <div class='service'>
+
+                        <div class='icon'>
+                            <i class='ion-ios-lightbulb'></i>
+                        </div>
+
+                        <div class='content'>
+
+                            <h4>Yaratıcı</h4>
+
+                            <p>
+                                KArmaşık sorunlara basit çözümler geliştirebilirim.
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class='col-md-3'>
+                    <div class='service'>
+
+                        <div class='icon'>
+                            <i class='ion-trophy'></i>
+                        </div>
+
+                        <div class='content'>
+
+                            <h4>Winner</h4>
+
+                            <p>
+                                Herhangi bir konuda bireysel ve takımım için elimden gelen her şeyi yaparım.
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class='col-md-3'>
+                    <div class='service'>
+
+                        <div class='icon'>
+                            <i class='ion-ios-glasses'></i>
+                        </div>
+
+                        <div class='content'>
+
+                            <h4>Analitik</h4>
+
+                            <p>
+                                Puzzle,Satranç,Geometri,Fizik gibi konuları ve pratiklerini seviyorum
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class='col-md-3'>
+                    <div class='service'>
+
+                        <div class='icon'>
+                            <i class='ion-ios-bolt'></i>
+                        </div>
+
+                        <div class='content'>
+
+                            <h4>Mental Güç</h4>
+
+                            <p>
+                                Hedeflerime giderken yoluma çıkan her zorluğu gelişimin bir parçası olarak görmekteyim
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+                <div class='col-md-3'>
+                    <div class='service'>
+
+                        <div class='icon'>
+                            <i class='ion-help-buoy'></i>
+                        </div>
+
+                        <div class='content'>
+
+                            <h4>Yardımsever</h4>
+
+                            <p>
+                                İnsanlara bildiğim konuları anlatmayı ve onların sorunlarına çözüm aramayı seviyorum
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class='col-md-3'>
+                    <div class='service'>
+
+                        <div class='icon'>
+                            <i class='ion-happy'></i>
+                        </div>
+
+                        <div class='content'>
+
+                            <h4>Duygu</h4>
+
+                            <p>
+                                Genel olarak sakin her zaman düşünceli biriyim
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class='col-md-3'>
+                    <div class='service'>
+
+                        <div class='icon'>
+                            <i class='ion-ios-game-controller-b'></i>
+                        </div>
+
+                        <div class='content'>
+
+                            <h4>Oyun</h4>
+
+                            <p>
+                                Rekabet gerektiren oyunları seviyorum
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class='col-md-3'>
+                    <div class='service'>
+
+                        <div class='icon'>
+                            <i class='ion-ios-pulse-strong'></i>
+                        </div>
+
+                        <div class='content'>
+
+                            <h4>Sağlık</h4>
+
+                            <p>
+                                Genel olarak hayatımdan hareketi çocukluğumdan beri hiç çıkarmadım iyi beslenip antremanlara gidiyorum
+                            </p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class='funfacts-block section-block' data-stellar-background-ratio='.2'>
+
+        <div class='container'>
+
+            <div class='row'>
+
+                <div class='col-md-3 col-sm-8 funfact'>
+                    <div class='content'>
+                        <h4>5</h4>
+                        <p>Awards Won</p>
+                    </div>
+                </div>
+
+               
+                <div class='col-md-3 col-sm-8 funfact'>
+                    <div class='content'>
+                        <h4>43</h4>
+                        <p>Proje</p>
+                    </div>
+                </div>
+
+                <div class='col-md-3 col-sm-8 funfact'>
+                    <div class='content'>
+                        <h4>98</h4>
+                        <p>Oyun</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class='testimonials-block section-block'>
+        <div class='container'>
+
+            <div class='section-header text-center'>
+
+                <h2 class='animate text-over-block'>Görüşler</h2>
+
+
+                <!--divider-->
+                <div class='divider-draft center'></div>
+                <!--/divider-->
+
+
+            </div>
+
+            <div class='row'>
+
+                <div class='col-md-8 col-md-offset-2'>
+
+                    <div class='testimonials-slider'>
+
+                        <div class='testimonial'>
+                            <p>
+
+                                Harika bir deneyim! Hızlı ve güvenilir yazılımcı ekibi, istediğimiz web sayfasını oluşturmak için baştan sona kadar mükemmel bir iş çıkardı. İlk başta isteklerimizi detaylı bir şekilde dinleyerek sürecin her aşamasında bize bilgi vererek ilerlediler. Profesyonellikleri ve uzmanlıkları sayesinde projemiz beklediğimizden bile hızlı bir şekilde tamamlandı.
+
+                            </p>
+
+                            <div class='author'>
+                                <h4>Sercan Uğur Saygın</h4>
+
+                            </div>
+                        </div>
+
+                        <div class='testimonial'>
+                            <p>
+                                İşlerini gerçekten hızlı ve güvenilir bir şekilde yapan bu yazılımcı ekibiyle çalışmak gerçek bir zevkti. Taleplerimizi anlamak için zaman ayırdılar ve her aşamada bizi bilgilendirerek sürecin kontrolünü elimizde tutmamızı sağladılar.
+                            </p>
+
+                            <div class='author'>
+                                <h4>Mavi Babakulyyeva</h4>
+                                
+                            </div>
+                        </div>
+
+                        <div class='testimonial'>
+                            <p>
+                                Proje boyunca ortaya çıkan her detayı özenle ele alarak, web sayfamızın sadece görsel açıdan değil, aynı zamanda performans ve kullanıcı deneyimi açısından da mükemmel olmasını sağladılar. Güvenlik konusundaki özel önlemleri ve detayları düşünmeleri, sayfamızın güvenliğini en üst düzeye çıkardı.
+                            </p>
+
+                            <div class='author'>
+                                <h4>Edip Korhan Mangtay</h4>
+                            </div>
+                        </div>
+
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+   @Html.Partial("_PartialFooter",Model)
+
+
+</section>

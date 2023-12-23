@@ -1,0 +1,241 @@
+﻿@model CV_Project.Models.Info
+
+<section id='resume' class='resume-section section'>
+
+    <div class='container'>
+        <div class='row'>
+            <div class='col-md-6 col-md-offset-3'>
+                <div class='section-header text-center'>
+
+                    <h2 class='animate text-over-block'>Eğitim Ve Yetenek Ağacım</h2>
+
+                    <!--divider-->
+                    <div class='divider-draft center'></div>
+                    <!--/divider-->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='timeline-block section-block'>
+        <div class='container'>
+            <ul class='timeline'>
+
+                <li class='timeline-header'>
+                    <h4>Eğitim</h4>
+                </li>
+
+                @for (int i = 0; i < Model.Educations.Count; i++)
+                {
+                    <li class="@(i%2==0 ? "" : "inverse")">
+
+                        <div class='timeline-desc'>
+
+                            <h4>@Model.Educations[i].StartYear - @(Model.Educations[i].FinishYear==0 ? "Devam Ediyor": Model.Educations[i].FinishYear.ToString())</h4>
+
+                        </div>
+
+                        <div class='timeline-content'>
+
+                            <h4>@Model.Educations[i].Title</h4>
+                            <span>@Model.Educations[i].Name</span>
+
+                            <p>
+                                @Model.Educations[i].Description
+                            </p>
+
+                        </div>
+
+                    </li>
+                }
+
+
+                <li class='timeline-header'>
+                    <h4>Katılımlar</h4>
+                </li>
+
+                @for (int i = 0; i < Model.Experiences.Count; i++)
+                {
+                    <li class="@(i%2==0 ? "" : "inverse")">
+
+                        <div class='timeline-desc'>
+
+                            <h4>@Model.Experiences[i].StartYear - @(Model.Experiences[i].FinishYear==0 ? "Devam Ediyor": Model.Experiences[i].FinishYear.ToString())</h4>
+
+                        </div>
+
+                        <div class='timeline-content'>
+
+                            <h4>@Model.Experiences[i].Title</h4>
+                            <span>@Model.Experiences[i].Name</span>
+
+                            <p>
+                                @Model.Experiences[i].Description
+                            </p>
+
+                        </div>
+
+                    </li>
+                }
+
+
+
+
+            </ul>
+        </div>
+    </div>
+
+    <div class='hobbies-block bg-lightgray section-block'>
+        <div class='container'>
+
+            <div class='section-header text-center'>
+                <h2 class='animate text-over-block'>Hobilerim</h2>
+                <!--divider-->
+                <div class='divider-draft center'></div>
+                <!--/divider-->
+            </div>
+
+            <div class='row'>
+
+                <div class='col-md-2 col-sm-4 col-xs-6'>
+
+                    <div class='hobby'>
+
+                        <div class='icon'>
+                            <i class='ion-ios-game-controller-b'></i>
+                        </div>
+
+                        <h4>Oyun</h4>
+
+                    </div>
+
+                </div>
+
+                <div class='col-md-2 col-sm-4 col-xs-6'>
+
+                    <div class='hobby'>
+
+                        <div class='icon'>
+                            <i class='ion-ios-book'></i>
+                        </div>
+
+                        <h4>Okuma</h4>
+
+                    </div>
+
+                </div>
+
+                <div class='col-md-2 col-sm-4 col-xs-6'>
+
+                    <div class='hobby'>
+
+                        <div class='icon'>
+                            <i class='ion-ios-chatboxes'></i>
+                        </div>
+
+                        <h4>İletişim</h4>
+
+                    </div>
+
+                </div>
+
+                <div class='col-md-2 col-sm-4 col-xs-6'>
+
+                    <div class='hobby'>
+
+                        <div class='icon'>
+                            <i class='ion-ios-musical-notes'></i>
+                        </div>
+
+                        <h4>Müzik</h4>
+
+                    </div>
+
+                </div>
+
+                <div class='col-md-2 col-sm-4 col-xs-6'>
+
+                    <div class='hobby'>
+
+                        <div class='icon'>
+                            <i class='ion-beer'></i>
+                        </div>
+
+                        <h4>İçecek</h4>
+
+                    </div>
+
+                </div>
+
+                <div class='col-md-2 col-sm-4 col-xs-6'>
+
+                    <div class='hobby'>
+
+                        <div class='icon'>
+                            <i class='ion-ios-football'></i>
+                        </div>
+
+                        <h4>Spor</h4>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <div class='skills-block section-block'>
+
+        <div class='container'>
+
+            <div class='section-header text-center'>
+                <h2 class='animate text-over-block'>Yeteneklerim</h2>
+
+                <!--divider-->
+                <div class='divider-draft center'></div>
+                <!--/divider-->
+
+            </div>
+
+
+            <div class='row'>
+
+                @foreach (var skill in Model.Skills)
+                {
+                    <div class="col-md-6">
+                        <div class='skill'>
+
+                            <h4>@skill.Name</h4>
+
+                            <div class='skill-bar' data-percent='@skill.Range'>
+                                <div class='bar'>
+                                    <div class='percent'>@skill.Range%</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                }
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    @Html.Partial("_PartialFooter", Model)
+
+
+</section>

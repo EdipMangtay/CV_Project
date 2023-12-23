@@ -1,0 +1,85 @@
+﻿@using CV_Project.Models
+
+@model List<Portfolio>
+
+
+
+@{
+    ViewBag.Title = "Portfolio";
+}
+
+<h2>Portfolio</h2>
+
+
+<div class="content-wrapper">
+    <div class="row ml-3 mr-3">
+
+
+        @foreach (var item in Model)
+        {<div class="col-6 mt-5">
+
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Portfolio Update</h3>
+                    </div>
+                    <form action="/Admin/Portfolio" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="Id" value="@item.Id" />                        
+                        <input type="hidden" name="ImageUrl" value="@item.ImageUrl" />
+
+                        <div class="card-body mt-2">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Name</label>
+                                <input type="text" name="Title" value="@item.Title" class="form-control" placeholder="Title">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Image</label>
+                                <input type="file" name="image" value="@item.ImageUrl" class="form-control" placeholder="Image Url">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Client</label>
+                                <input type="text" name="client" value="@item.Client" class="form-control" placeholder="Client">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Date</label>
+                                <input type="datetime-local" name="date" value="@item.Date" class="form-control" placeholder="Date">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">TimeTaken</label>
+                                <input type="text" name="TimeTaken" value="@item.TimeTaken" class="form-control" placeholder="TimeTaken">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Description</label>
+                                <input type="text" name="Description" value="@item.Description" class="form-control" placeholder="Description">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Challenge</label>
+                                <input type="text" name="Challenge" value="@item.Challenge" class="form-control" placeholder="Challenge">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Solution</label>
+                                <input type="text" name="Solution" value="@item.Solution" class="form-control" placeholder="Solution">
+                            </div>
+                        </div>
+
+                        <div class="card-footer" style="text-align:center">
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        }
+
+
+    </div>
+
+
+
+</div>

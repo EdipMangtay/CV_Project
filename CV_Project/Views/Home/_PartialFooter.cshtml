@@ -1,0 +1,43 @@
+﻿@model CV_Project.Models.Info
+
+<div class='footer bg-lightgray section-block'>
+
+    <div class='container'>
+
+        <div class='row'>
+
+            <div class='col-xs-6 text-left'>
+                <h4>@Model.Name @Model.Surname</h4>
+            </div>
+
+            <div class='col-xs-6 text-right'>
+                <ul class='footer-social'>
+                    <li>
+                        <a href='@Model.SocialMedias.FirstOrDefault(i=>i.Name=="Instagram").Link'>
+                            <i class="fa-brands @Model.SocialMedias.FirstOrDefault(i=>i.Name=="Instagram").Icon"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='@Model.SocialMedias.FirstOrDefault(i=>i.Name=="Twitter").Link'>
+                            <i class='fa-brands @Model.SocialMedias.FirstOrDefault(i=>i.Name=="Twitter").Icon'></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='@Model.SocialMedias.FirstOrDefault(i=>i.Name=="Linkedin").Link'>
+                            <i class="fa-brands @Model.SocialMedias.FirstOrDefault(i=>i.Name=="Linkedin").Icon"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href='@Model.SocialMedias.FirstOrDefault(i=>i.Name=="Github").Link'>
+                            <i class='fa-brands @Model.SocialMedias.FirstOrDefault(i=>i.Name=="Github").Icon'></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

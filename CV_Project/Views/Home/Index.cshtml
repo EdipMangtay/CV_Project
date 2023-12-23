@@ -1,0 +1,774 @@
+﻿*@using CV_Project.Models
+
+@model Info
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html class='no-js'>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+
+    <title>Symp - Responsive One Page VCard/Resume HTML Template</title>
+
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel='stylesheet' type='text/css' href='~/Content/bootstrap/css/bootstrap.min.css'>
+    <link rel='stylesheet' type='text/css' href='~/Content/css/ionicons.min.css'>
+    <link rel='stylesheet' type='text/css' href='~/Content/css/owl.carousel.css'>
+    <link rel='stylesheet' type='text/css' href='~/Content/css/owl.theme.css'>
+    <link rel='stylesheet' type='text/css' href='~/Content/css/owl.transitions.css'>
+    <link rel='stylesheet' type='text/css' href='~/Content/css/magnific-popup.css'>
+    <link rel='stylesheet' type='text/css' href='~/Content/css/style.css'>
+    <link rel='stylesheet' type='text/css' href='~/Content/css/color-default.css'>
+
+    <script src="https://kit.fontawesome.com/d739071501.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!--=============================================================================
+        Preloader
+    ===============================================================================-->
+    <div id='preloader'>
+        <div class='loader'>
+            <img src='~/Content/img/load.gif' alt='symp'>
+        </div>
+    </div>
+
+
+
+    <!--=============================================================================
+        Main Wrapper
+    ===============================================================================-->
+    <div id='wrapper'>
+
+        <!--=============================================================================
+        Front Section
+    ===============================================================================-->
+        <section class='front-section'>
+
+            <div class='container'>
+
+
+                <div class='transition-mask'></div>
+
+
+                <div class='front-person-img'>
+
+                    <!--person's image-->
+                    <img src='~/Content/img/man1.png' alt='Symp'>
+                    <!--/person's image-->
+
+                </div>
+
+                <!--person's titles-->
+                <div class='front-person-titles'>
+
+                    <!--title1-->
+                    <span class='t1'>
+                        Developer   
+                    </span>
+                    <!--/title1-->
+                    <!--title2-->
+                    <span class='t2'>
+                        Gamer guy
+                    </span>
+                    <!--/title2-->
+                    <!--title3-->
+                    <span class='t3'>
+                        Freelancer
+                    </span>
+                    <!--/title3-->
+
+                </div>
+                <!--/person's titles-->
+
+                <nav class='front-person-links'>
+
+                    <!--
+                    navigation links, data-section attribute points towards the section with id to be opened.
+                -->
+
+                    <ul>
+
+                        <li>
+                            <a href='#' data-section='about'>Hakkımda</a>
+                        </li>
+
+                        <li>
+                            <a href='#' data-section='resume'>Eğitim</a>
+                        </li>
+
+                        <li>
+                            <a href='#' data-section='services'>Hizmetler</a>
+                        </li>
+
+                        <li>
+                            <a href='#' data-section='portfolio'>Portfolio</a>
+                        </li>
+
+                        @*<li>
+                            <a href='#' data-section='blog'>My Blog</a>
+                        </li>*@
+
+                        <li>
+                            <a href='#' data-section='contact'>İletişim</a>
+                        </li>
+                      
+                    </ul>
+
+                </nav>
+
+
+
+                <div class='front-heading text-center'>
+
+                    <h2>
+                        Ali Edip Mangtay
+                    </h2>
+
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+        <!--=============================================================================
+        /Front Section
+    ===============================================================================-->
+        <!--=============================================================================
+        About Section
+    ===============================================================================-->
+        @Html.Partial("_PartialAbout", Model)
+        <!--=============================================================================
+        /About Section
+    ===============================================================================-->
+        <!--=============================================================================
+        Resume Section
+    ===============================================================================-->
+        @Html.Partial("_PartialResume", Model)
+        <!--=============================================================================
+        /Resume Section
+    ===============================================================================-->
+        <!--=============================================================================
+        Services Section
+    ===============================================================================-->
+        @Html.Partial("_PartialService", Model)
+        <!--=============================================================================
+        /Services Section
+    ===============================================================================-->
+        <!--=============================================================================
+        Portfolio Section
+    ===============================================================================-->
+     @Html.Partial("_PartialPortfolio",Model)
+        <!--=============================================================================
+        /Portfolio Section
+    ===============================================================================-->
+        <!--=============================================================================
+        Blog Section
+    ===============================================================================-->
+        <section id='blog' class='blog-section section'>
+
+            <div class='container'>
+
+                <div class='row'>
+
+                    <div class='col-md-6 col-md-offset-3'>
+                        <div class='section-header text-center'>
+
+                            <h2>My Blog</h2>
+
+                            <!--divider-->
+                            <div class='divider-draft center'></div>
+                            <!--/divider-->
+
+                            <p>
+                                Burası benim düşüncelerimin yaşadığı bloğum.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class='posts-block section-block'>
+
+                <div class='container'>
+
+                    <div class='row'>
+
+                        <div class='col-md-8'>
+
+                            <div class='post'>
+
+                                <div class='media'>
+                                    <img alt='symp' src='~/Content/img/bg2.jpg'>
+                                </div>
+
+                                <div class='content'>
+
+                                    <h4>
+                                        <a href='post.html'>
+                                            Simple Post With Image
+                                        </a>
+                                    </h4>
+
+                                    <ul class='post-icons'>
+
+                                        <li>
+                                            <i class='ion-ios-person'></i>
+                                            <span>Ali Edip Mangtay</span>
+                                        </li>
+
+                                        <li>
+                                            <i class='ion-ios-clock'></i>
+                                            <span>27 Nisan 2002</span>
+                                        </li>
+
+                                        <li>
+                                            <i class='ion-ios-chatbubble'></i>
+                                            <span>5</span>
+                                        </li>
+
+
+
+                                    </ul>
+
+                                    <p>
+                                        Cu illud lorem putent vel. Eum in movet nostrum referrentur. His ne tantas tractatos. Sit eu saperet antiopam scripserit. Ei albucius consequuntur sea, no nominavi fabellas phaedrum his....
+                                    </p>
+
+                                    <a href='post.html' class='read-more'>
+                                        Daha fazla...
+                                        <i class='ion-ios-arrow-thin-right'></i>
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <div class='post'>
+
+                                <div class='media'>
+                                    <img alt='symp' src='~/Content/img/bg2.jpg'>
+                                </div>
+
+                                <div class='content'>
+
+                                    <h4>
+                                        <a href='post.html'>
+                                            Simple Post With Image
+                                        </a>
+                                    </h4>
+
+                                    <ul class='post-icons'>
+
+                                        <li>
+                                            <i class='ion-ios-person'></i>
+                                            <span>Ali Edip Mangtay</span>
+                                        </li>
+
+                                        <li>
+                                            <i class='ion-ios-clock'></i>
+                                            <span>27 Nisan 2002</span>
+                                        </li>
+
+                                        <li>
+                                            <i class='ion-ios-chatbubble'></i>
+                                            <span>5</span>
+                                        </li>
+
+
+
+                                    </ul>
+
+                                    <p>
+                                        Cu illud lorem putent vel. Eum in movet nostrum referrentur. His ne tantas tractatos. Sit eu saperet antiopam scripserit. Ei albucius consequuntur sea, no nominavi fabellas phaedrum his....
+                                    </p>
+
+                                    <a href='post.html' class='read-more'>
+                                        Read More
+                                        <i class='ion-ios-arrow-thin-right'></i>
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <div class='post'>
+
+                                <div class='media'>
+                                    <img alt='symp' src='~/Content/img/bg2.jpg'>
+                                </div>
+
+                                <div class='content'>
+
+                                    <h4>
+                                        <a href='post.html'>
+                                            Simple Post With Image
+                                        </a>
+                                    </h4>
+
+                                    <ul class='post-icons'>
+
+                                        <li>
+                                            <i class='ion-ios-person'></i>
+                                            <span>Ali Edip Mangtay</span>
+                                        </li>
+
+                                        <li>
+                                            <i class='ion-ios-clock'></i>
+                                            <span>14 June 2015</span>
+                                        </li>
+
+                                        <li>
+                                            <i class='ion-ios-chatbubble'></i>
+                                            <span>5</span>
+                                        </li>
+
+
+
+                                    </ul>
+
+                                    <p>
+                                        Cu illud lorem putent vel. Eum in movet nostrum referrentur. His ne tantas tractatos. Sit eu saperet antiopam scripserit. Ei albucius consequuntur sea, no nominavi fabellas phaedrum his....
+                                    </p>
+
+                                    <a href='post.html' class='read-more'>
+                                        Read More
+                                        <i class='ion-ios-arrow-thin-right'></i>
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                            <div class='post-more'>
+                                <a href='#' class='more-link'>
+                                    Load More
+                                </a>
+                            </div>
+
+                        </div>
+
+                        <div class='col-md-4'>
+
+                            <div class='sidebar'>
+
+                                <div class='sidebar-widget'>
+
+                                    <div class='search-box'>
+
+                                        <input type='text' placeholder='Search' class='search-input'>
+
+                                        <a class='search-btn' href='#'>
+                                            <i class='ion-ios-search'></i>
+                                        </a>
+
+                                    </div>
+
+                                </div>
+
+                                <div class='sidebar-widget'>
+                                    <div class='categories-widget'>
+
+                                        <div class='widget-header'>
+                                            <h4>
+                                                <i class='ion-ios-folder'></i> Categories
+                                            </h4>
+                                        </div>
+
+                                        <ul class='sidebar-list'>
+
+                                            <li>
+                                                <a href='#'>Web Design</a>
+                                            </li>
+
+                                            <li>
+                                                <a href='#'>Geziler</a>
+                                            </li>
+
+                                            <li>
+                                                <a href='#'>Yaşam tarzı</a>
+                                            </li>
+
+                                            <li>
+                                                <a href='#'>Fotoğraflar</a>
+                                            </li>
+
+                                            <li>
+                                                <a href='#'>Teknoloji</a>
+                                            </li>
+
+
+
+                                        </ul>
+
+                                    </div>
+                                </div>
+
+                                <div class='sidebar-widget'>
+
+                                    <div class='widget-header'>
+                                        <h4>
+                                            <i class='ion-document'></i>
+                                            Recent Posts
+                                        </h4>
+                                    </div>
+
+
+                                    <ul class='sidebar-list'>
+
+                                        <li>
+                                            <a href='#'>
+                                                Your Recent Post's Title. Lorem ipsum dolor sit amet is simply a dummy text.
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href='#'>
+                                                Your Recent Post's Title. Lorem ipsum dolor sit amet is simply a dummy text.
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href='#'>
+                                                Your Recent Post's Title. Lorem ipsum dolor sit amet is simply a dummy text.
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href='#'>
+                                                Your Recent Post's Title. Lorem ipsum dolor sit amet is simply a dummy text.
+                                            </a>
+                                        </li>
+
+
+
+                                    </ul>
+
+
+                                </div>
+
+                                <div class='sidebar-widget'>
+                                    <div class='widget-header'>
+
+                                        <h4>
+                                            <i class='ion-archive'></i>
+                                            Archives
+                                        </h4>
+
+                                        <ul class='sidebar-list'>
+
+                                            <li>
+                                                <a href='#'>
+                                                    June (14)
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href='#'>
+                                                    July (10)
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href='#'>
+                                                    August(6)
+                                                </a>
+                                            </li>
+
+
+                                            <li>
+                                                <a href='#'>
+                                                    September(7)
+                                                </a>
+                                            </li>
+
+
+
+                                        </ul>
+
+                                    </div>
+                                </div>
+
+                                <div class='sidebar-widget'>
+                                    <div class='widget-header'>
+                                        <h4>
+                                            <i class='ion-ios-pricetag'></i>
+                                            Tags
+                                        </h4>
+                                    </div>
+
+                                    <ul class='sidebar-list list-inline'>
+                                        <li>
+                                            <a href='#'>Design</a>
+                                        </li>
+                                        <li>
+                                            <a href='#'>Tech</a>
+                                        </li>
+                                        <li>
+                                            <a href='#'>Web</a>
+                                        </li>
+                                        <li>
+                                            <a href='#'>Modern</a>
+                                        </li>
+                                        <li>
+                                            <a href='#'>Photography</a>
+                                        </li>
+                                        <li>
+                                            <a href='#'>Life</a>
+                                        </li>
+                                        <li>
+                                            <a href='#'>App</a>
+                                        </li>
+                                        <li>
+                                            <a href='#'>Template</a>
+                                        </li>
+
+                                    </ul>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class='footer bg-lightgray section-block'>
+
+                <div class='container'>
+
+                    <div class='row'>
+
+                        <div class='col-xs-6 text-left'>
+                            <h4>Ali Edip Mangtay</h4>
+                        </div>
+
+                        <div class='col-xs-6 text-right'>
+                            <ul class='footer-social'>
+                                <li>
+                                    <a href='#'>
+                                        <i class='ion-social-facebook'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='#'>
+                                        <i class='ion-social-twitter'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='#'>
+                                        <i class='ion-social-pinterest'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='#'>
+                                        <i class='ion-social-dribbble'></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+        <!--=============================================================================
+        /Blog Section
+    ===============================================================================-->
+        <!--=============================================================================
+        Contact Section
+    ===============================================================================-->
+        <section id='contact' class='contact-section section'>
+
+            <div class='contact-block section-block'>
+                <div class='container'>
+                    <div class='row'>
+                        <div class='col-md-6 col-md-offset-3'>
+
+                            <div class='section-header text-center'>
+                                <h2 class='animate text-over-block'>İletişim</h2>
+                                <!--divider-->
+                                <div class='divider-draft center'></div>
+                                <!--/divider-->
+                                <p>
+                                    Aşağıdaki Kutucukları doldurarak benimle iletişime geçebilirsiniz
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class='row'>
+                        <div class='col-md-8 col-md-offset-2'>
+
+                            <form id='contact-form' class='contact-form' action='mail.php' method='post' data-toggle='validator'>
+
+                                <div id='contact-form-result'></div>
+
+                                <div class='row'>
+
+                                    <div class='col-md-6'>
+
+                                        <div class='form-group'>
+                                            <input type='text' class='form-control' placeholder='Name' required>
+
+                                            <div class='help-block with-errors'></div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class='col-md-6'>
+                                        <div class='form-group'>
+                                            <input type='email' class='form-control' placeholder='Email' required>
+
+                                            <div class='help-block with-errors'></div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class='row'>
+
+                                    <div class='col-md-6'>
+                                        <div class='form-group'>
+                                            <input type='text' class='form-control' placeholder='Phone' required>
+                                            <div class='help-block with-errors'></div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class='col-md-6'>
+                                        <div class='form-group'>
+                                            <input type='text' class='form-control' placeholder='Website' required>
+                                            <div class='help-block with-errors'></div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class='form-group'>
+                                    <textarea rows='5' class='form-control' placeholder='Message' required></textarea>
+                                    <div class='help-block with-errors'></div>
+                                </div>
+
+                                <div class='form-group text-center'>
+                                    <button type='submit' class='symp-btn'>Gönder!</button>
+                                </div>
+
+
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+            <div class='footer bg-lightgray section-block'>
+
+                <div class='container'>
+
+                    <div class='row'>
+
+                        <div class='col-xs-6 text-left'>
+                            <h4>Ali Edip Mangtay</h4>
+                        </div>
+
+                        <div class='col-xs-6 text-right'>
+                            <ul class='footer-social'>
+                                <li>
+                                    <a href='#'>
+                                        <i class='ion-social-facebook'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='#'>
+                                        <i class='ion-social-twitter'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='#'>
+                                        <i class='ion-social-pinterest'></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='#'>
+                                        <i class='ion-social-dribbble'></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+        <!--=============================================================================
+        /Contact Section
+    ===============================================================================-->
+        <!--close button-->
+        <div class='close-btn'>
+            <span></span>
+            <span></span>
+        </div>
+        <!--/close button-->
+
+
+    </div>
+    <!--=============================================================================
+        /Main Wrapper
+    ===============================================================================-->
+    <!--=============================================================================
+        JavaScript Files
+    ===============================================================================-->
+    <script src='~/Content/js/jquery.min.js'></script>
+    <script src='~/Content/js/jquery.stellar.min.js'></script>
+    <script src='~/Content/js/modernizr.js'></script>
+    <script src='~/Content/js/owl.carousel.min.js'></script>
+    <script src='~/Content/js/jquery.shuffle.min.js'></script>
+    <script src='~/Content/js/jquery.magnific-popup.min.js'></script>
+    <script src='~/Content/js/validator.min.js'></script>
+    <script src='~/Content/js/smoothscroll.js'></script>
+    <script src='~/Content/js/script.js'></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+﻿@model CV_Project.Models.ViewModelAbout
+@{
+    ViewBag.Title = "About";
+}
+
+<div class="content-wrapper">
+    <form action="/Admin/About" method="post">
+        <div class="row ml-3 mr-3">
+            <div class="col-6 mt-5">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Info Update</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+
+                    <div class="card-body">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" name="email" value="@Model.Email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Name</label>
+                            <input type="text" name="name" value="@Model.Name" class="form-control" id="exampleInputPassword1" placeholder="Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Surname</label>
+                            <input type="text" name="surname" value="@Model.Surname" class="form-control" id="exampleInputPassword1" placeholder="Surname">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Age</label>
+                            <input type="number" name="age" value="@Model.Age" class="form-control" id="exampleInputPassword1" placeholder="Age">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Coverletter</label>
+                            <textarea class="form-control" name="coverletter" placeholder="Coverletter" rows="3">@Model.Coverletter</textarea>
+                        </div>
+                    </div>
+                    <!-- /.card-body -->
+
+
+                </div>
+            </div>
+            <div class="col-6 mt-5">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Social Media Update</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    
+                    <div class="card-body">
+                        @foreach (var item in Model.SocialMedias)
+                        {
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <label for="exampleInputEmail1">Social Media:</label>
+                                        <select class="form-control" asp-for="@item.Name">
+                                            <option value="Instagram" name="name" @(item.Name == "Instagram" ? "selected" : "")>Instagram</option>
+                                            <option value="Twitter" name="name" @(item.Name == "Twitter" ? "selected" : "")>Twitter</option>
+                                            <option value="LinkedIn" name="name" @(item.Name == "Linkedin" ? "selected" : "")>LinkedIn</option>
+                                            <option value="Github" name="name" @(item.Name == "Github" ? "selected" : "")>Github</option>
+                                        </select>
+
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="form-group">
+                                            <label for="exampleInputPassword1">Link</label>
+                                            <input type="text" name="Link" value="@item.Link" class="form-control" id="exampleInputPassword1" placeholder="Social media link">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        }
+
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer" style="text-align:center">
+            <button type="submit" class="btn btn-block btn-primary">Update</button>
+        </div>
+    </form>
+
+</div>
+
+
+

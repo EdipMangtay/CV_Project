@@ -1,0 +1,64 @@
+﻿@using CV_Project.Models
+
+@model List<ViewModelEducation>
+
+@{
+    ViewBag.Title = "Education";
+}
+
+<h2>Education</h2>
+<div class="content-wrapper">
+
+    <div class="row ml-3 mr-3">
+
+        @foreach (var item in Model)
+        {<div class="col-6 mt-5">
+    <form action="/Admin/Education" method="post">
+
+        <div class="card card-primary">
+            <div class="card-header">
+                <h3 class="card-title">Education Update</h3>
+            </div>
+
+
+           <input type="hidden" name="Id" value="@item.Id" />
+            <div class="card-body mt-2">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Title</label>
+                    <input type="text" name="title" value="@item.Title" class="form-control" placeholder="Title">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Name</label>
+                    <input type="text" name="name" value="@item.Name" class="form-control" placeholder="Name">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Description</label>
+                    <input type="text" name="Description" value="@item.Description" class="form-control" placeholder="Description">
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Start Year</label>
+                    <input type="text" name="startyear" value="@item.StartYear" class="form-control" placeholder="Start Year">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Finish Year</label>
+                    <input type="text" name="finishyear" value="@item.FinishYear" class="form-control" placeholder="Finish Year">
+                </div>
+            </div>
+
+            <div class="card-footer" style="text-align:center">
+                <button type="submit" class="btn btn-block btn-primary">Update</button>
+            </div>
+
+        </div>
+
+
+    </form>
+</div>
+        }
+    </div>
+
+
+</div>
